@@ -1,39 +1,30 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+/**
+ * 애플리케이션 루트 라우터 구성
+ * - 전역 라우팅 엔트리포인트로, 페이지 컴포넌트를 경로에 매핑합니다.
+ */
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Import pages
-import SignInPage from './pages/user/signIn';
-import SignUpPage from './pages/user/signUp';
-import MatchPage from './pages/user/match';
-import ChatListPage from './pages/chat/list';
-import ChatRoomPage from './pages/chat/room';
-import NotionPage from './pages/notion';
-import PingPongTestPage from './pages/pingpong';
+import HomePage from './pages/home';
+import SimpleTestPage from './pages/chat/simple-test';
 
-// Import store
-import { useAuthStore } from './stores/authStore';
-
+/**
+ * App 컴포넌트
+ * - 라우터 컨테이너 및 라우트 정의를 렌더링합니다.
+ */
 function App() {
-  const { isAuthenticated } = useAuthStore();
-
   return (
     <Router>
       <div className="App">
+        {/* 주요 라우트 매핑 */}
         <Routes>
-          {/* Public routes */}
-          <Route path="/signin" element={!isAuthenticated ? <SignInPage /> : <Navigate to="/chat/list" />} />
-          <Route path="/signup" element={!isAuthenticated ? <SignUpPage /> : <Navigate to="/chat/list" />} />
-          
-          {/* Protected routes */}
-          <Route path="/user/match" element={isAuthenticated ? <MatchPage /> : <Navigate to="/signin" />} />
-          <Route path="/chat/list" element={isAuthenticated ? <ChatListPage /> : <Navigate to="/signin" />} />
-          <Route path="/chat/room/:roomId" element={isAuthenticated ? <ChatRoomPage /> : <Navigate to="/signin" />} />
-          <Route path="/notion" element={isAuthenticated ? <NotionPage /> : <Navigate to="/signin" />} />
-          <Route path="/pingpong" element={isAuthenticated ? <PingPongTestPage /> : <Navigate to="/signin" />} />
-          
-          {/* Default redirect */}
-          <Route path="/" element={<Navigate to={isAuthenticated ? "/chat/list" : "/signin"} />} />
+          {/* 홈 페이지 (루트) */}
+          <Route path="/" element={<HomePage />} />
+          {/* 샘플 채팅 테스트 페이지 */}
+          <Route path="/simple-test" element={<SimpleTestPage />} />
+          {/* 홈 페이지 (별칭 경로) */}
+          <Route path="/home" element={<HomePage />} />
         </Routes>
       </div>
     </Router>

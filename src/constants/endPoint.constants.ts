@@ -1,11 +1,6 @@
-interface ImportMetaEnv {
-  readonly VITE_API_URL?: string;
-  readonly VITE_WEBSOCKET_URL?: string;
-}
 
-interface ImportMeta {
-  readonly env: ImportMetaEnv;
-}
+
+
 
 export const API_ENDPOINTS = {
   BASE_URL: (import.meta as any).env?.VITE_API_URL || 'http://localhost:8080',

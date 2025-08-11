@@ -10,45 +10,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    // React 핵심 라이브러리 - UI 컴포넌트 생성
-    "react": "^18.2.0",
-    // React DOM - React 컴포넌트를 실제 DOM에 렌더링
-    "react-dom": "^18.2.0",
-    // HTTP 클라이언트 - API 통신을 위한 라이브러리
     "axios": "^1.6.0",
-    // 상태 관리 라이브러리 - 전역 상태를 간단하게 관리
-    "zustand": "^4.4.0",
-    // 스키마 검증 라이브러리 - 런타임 타입 검증 및 데이터 검증
-    "zod": "^3.22.0",
-    // React 라우팅 라이브러리 - SPA에서 페이지 간 이동 관리
+    "react": "^18.2.0",
+    "react-daum-postcode": "^3.0.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
-    // 다음 주소 검색 컴포넌트 - 주소 입력 시 팝업으로 주소 검색
-    "react-daum-postcode": "^3.0.0"
+    "zod": "^3.22.0",
+    "zustand": "^4.5.7"
   },
   "devDependencies": {
-    // 빌드 도구 - 빠른 개발 서버 및 프로덕션 빌드
-    "vite": "^5.0.8",
-    // TypeScript 컴파일러 - 정적 타입 검사 및 컴파일
-    "typescript": "^5.2.2",
-    // Vite React 플러그인 - JSX 및 Fast Refresh 지원
-    "@vitejs/plugin-react": "^4.2.1",
-    // 코드 품질 검사 도구 - 코드 스타일 및 잠재적 오류 검사
-    "eslint": "^8.55.0",
-    // ESLint JavaScript 규칙 세트
     "@eslint/js": "^8.55.0",
-    // TypeScript용 ESLint 플러그인 - TS 코드 분석
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    // TypeScript용 ESLint 파서 - TS 코드 파싱
-    "@typescript-eslint/parser": "^6.14.0",
-    // React Hooks 규칙 검사 플러그인 - 훅 사용 규칙 강제
-    "eslint-plugin-react-hooks": "^4.6.0",
-    // Fast Refresh 지원 플러그인 - 개발 시 컴포넌트 상태 유지
-    "eslint-plugin-react-refresh": "^0.4.5",
-    // React 타입 정의 - TypeScript에서 React 타입 지원
+    "@types/node": "^24.2.1",
     "@types/react": "^18.2.43",
-    // React DOM 타입 정의 - TypeScript에서 React DOM 타입 지원
     "@types/react-dom": "^18.2.17",
-    // 전역 변수 정의 - ESLint에서 전역 변수 타입 정의
-    "globals": "^13.24.0"
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "globals": "^13.24.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
   }
-} 
+}
